@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        .button{
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+        </style>
+</head>
+<body>
+    
+  <h2>Body Background changer Application </h2>
+  <button class="button" id="grey"></button>
+    <button class="button" id="white"></button>
+    <button class="button" id="black"></button> 
+    <button class="button" id="green"></button>
+
+<button class="btn-bg">random color change</button>
+
+
+</body>
+<script>
+    const buttons=document.querySelectorAll(".button");
+    const body=document.querySelector("body");
+    //console.log(button);
+    buttons.forEach((buttons)=>{
+        buttons.addEventListener("click",function(e){
+           if(e.target.id=="grey")
+           {
+             body.style.backgroundColor="grey";
+           }
+           if(e.target.id=="white")
+           {
+             body.style.backgroundColor="white";
+           }
+           if(e.target.id=="black")
+           {
+             body.style.backgroundColor="black";
+           }
+           if(e.target.id=="green")
+           {
+            body.style.backgroundColor="green";
+           }
+         
+    })
+    })
+    const btnChanger=document.querySelector('.btn-bg')
+          btnChanger.addEventListener('click',function(){
+                const randomBg=Math.floor(Math.random()*16777215).toString(16);
+                body.style.backgroundColor= `#${randomBg}`
+          })   
+    </script>
+</html>
